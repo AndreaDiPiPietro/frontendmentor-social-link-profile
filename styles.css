@@ -1,0 +1,113 @@
+:root {
+  --color-diffuse: hsl(0, 0%, 8%);
+  --color-background: hsl(0, 0%, 12%);
+  --color-accent: hsl(75, 94%, 57%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-grey: hsl(0, 0%, 20%);
+}
+
+@font-face {
+  font-family: Inter;
+  src: url(./assets/fonts/static/Inter-Bold.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--color-diffuse);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Inter";
+}
+
+.container {
+  background-color: var(--color-background);
+  width: 27%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1em;
+  color: var(--color-white);
+  padding: 2rem;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 2em 0;
+}
+
+.image {
+  border-radius: 100%;
+  width: 50%;
+}
+
+.subtitle {
+  margin: 1em 0 0 0;
+}
+
+.quote {
+  margin: 2em;
+}
+
+.button-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.container a {
+  width: 100%;
+  background-color: var(--color-grey);
+  border: none;
+  border-radius: 1em;
+  color: var(--color-white);
+  height: 4em;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container a:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.container a:hover,
+.container a:focus {
+  animation: 0.3s ease-out 0s 1 onHover;
+  animation-fill-mode: forwards;
+}
+
+@keyframes onHover {
+  0% {
+    background-color: var(--color-grey);
+    height: 4em;
+    color: var(--color-white);
+  }
+  100% {
+    background-color: var(--color-accent);
+    height: 5em;
+    color: var(--color-background);
+  }
+}
+
+.accent {
+  color: var(--color-accent);
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+  }
+}
